@@ -19,16 +19,16 @@ public class FamilyActivity extends AppCompatActivity {
 
         ArrayList<Word> families = new ArrayList<Word>();
 
-            families.add(new Word(R.drawable.family_father, "father", "әpә"));
-            families.add(new Word(R.drawable.family_mother, "mother", "әṭa"));
-            families.add(new Word(R.drawable.family_son, "son", "angsi"));
-            families.add(new Word(R.drawable.family_daughter, "daughter", "tune"));
-            families.add(new Word(R.drawable.family_older_brother, "older brother", "taachi"));
-            families.add(new Word(R.drawable.family_younger_brother, "younger brother", "chalitti"));
-            families.add(new Word(R.drawable.family_older_sister, "older sister", "teṭe"));
-            families.add(new Word(R.drawable.family_younger_sister, "younger sister", "kolliti"));
-            families.add(new Word(R.drawable.family_grandmother, "grandmother", "ama"));
-            families.add(new Word(R.drawable.family_grandfather, "grandfather", "paapa"));
+            families.add(new Word(R.drawable.family_father, "father", "әpә", R.raw.family_father));
+            families.add(new Word(R.drawable.family_mother, "mother", "әṭa", R.raw.family_mother));
+            families.add(new Word(R.drawable.family_son, "son", "angsi", R.raw.family_son));
+            families.add(new Word(R.drawable.family_daughter, "daughter", "tune", R.raw.family_daughter));
+            families.add(new Word(R.drawable.family_older_brother, "older brother", "taachi", R.raw.family_older_brother));
+            families.add(new Word(R.drawable.family_younger_brother, "younger brother", "chalitti", R.raw.family_younger_brother));
+            families.add(new Word(R.drawable.family_older_sister, "older sister", "teṭe", R.raw.family_older_sister));
+            families.add(new Word(R.drawable.family_younger_sister, "younger sister", "kolliti", R.raw.family_younger_sister));
+            families.add(new Word(R.drawable.family_grandmother, "grandmother", "ama", R.raw.family_grandmother));
+            families.add(new Word(R.drawable.family_grandfather, "grandfather", "paapa", R.raw.family_grandfather));
 
         WordAdapter itemsAdapter = new WordAdapter(this, R.layout.list_item, families, R.color.category_family);
 

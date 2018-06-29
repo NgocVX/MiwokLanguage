@@ -1,6 +1,7 @@
 package com.ngoc_vx.miwoklanguage.adapter;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,6 +20,7 @@ import com.ngoc_vx.miwoklanguage.object.Word;
 import java.util.List;
 
 public class WordAdapter extends ArrayAdapter<Word> {
+    MediaPlayer mediaPlayer;
     private int colorResourceId;
 
     public WordAdapter(@NonNull Context context, int resource, @NonNull List<Word> objects, int colorResourceId) {
@@ -36,7 +39,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
 
         // Get the {@link Word} object located at this position in the list
-        Word currentWord = getItem(position);
+        final Word currentWord = getItem(position);
 
         // Find the ImageView in the list_item.xml layout with the ID image
         ImageView miwokImageView = listItemView.findViewById(R.id.miwok_image);
@@ -73,6 +76,18 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
+
+        // Find the play button in the list_item.xml layout with the ID button
+        Button soundButton = listItemView.findViewById(R.id.sound_word);
+        soundButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer = MediaPlayer.create(getContext(), currentWord.getSoundResourceId());
+                mediaPlayer.setLooping(false);
+                mediaPlayer.start();
+
+            }
+        });
 
         // Return the whole list item layout (containing 2 TextViews)
         // so that it can be shown in the ListView
