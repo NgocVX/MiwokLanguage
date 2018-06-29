@@ -9,4 +9,7 @@
 
     <!-- Default padding word list item -->
     <dimen name="padding_word_list_item">16dp</dimen>
+
+    <dimen name="image_height">88dp</dimen>
+    <dimen name="image_width">88dp</dimen>
 </resources>
