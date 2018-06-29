@@ -77,18 +77,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
 
-        // Find the play button in the list_item.xml layout with the ID button
-        Button soundButton = listItemView.findViewById(R.id.sound_word);
-        soundButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mediaPlayer = MediaPlayer.create(getContext(), currentWord.getSoundResourceId());
-                mediaPlayer.setLooping(false);
-                mediaPlayer.start();
-
-            }
-        });
-
         // Return the whole list item layout (containing 2 TextViews)
         // so that it can be shown in the ListView
         return listItemView;

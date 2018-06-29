@@ -45,10 +45,4 @@
             tools:text="one" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/sound_word"
-        android:layout_width="@dimen/image_width"
-        android:layout_height="@dimen/image_height"
-        android:text="Play"/>
-
 </LinearLayout>
