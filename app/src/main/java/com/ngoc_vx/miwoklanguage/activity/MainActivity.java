@@ -3,6 +3,7 @@ package com.ngoc_vx.miwoklanguage.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.v("MainActivity", "on create");
 
         // Find view that shows numbers category
         TextView numbers = findViewById(R.id.numbers);
@@ -58,6 +61,36 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(phrasesIntent);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.v("MainActivity", "on start");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v("MainActivity", "on resume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v("MainActivity", "on pause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.v("MainActivity", "on stop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.v("MainActivity", "on destroy");
     }
 
 }
